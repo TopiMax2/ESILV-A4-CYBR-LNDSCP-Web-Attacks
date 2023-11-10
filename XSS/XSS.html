@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/xss.css">
     <title>XSS Demo</title>
     <link rel="icon" type="image/png" href="img/thunder.png">
 </head>
 <body>
     <header>
-        <h1>XSS Demo</h1>
+        <h1>Web Vulnerability Demos</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="XSS.html">XSS</a></li>
                 <li><a href="sql-injection.html">SQL Injection</a></li>
                 <li><a href="csrf.html">CSRF</a></li>
+                <li><a href="LFI.html">LFI</a></li>
                 <!-- Add more links for other vulnerabilities -->
             </ul>
         </nav>
@@ -25,21 +27,26 @@
             <h2>XSS (Cross-Site Scripting) Demo</h2>
             <p>This page demonstrates a simple XSS vulnerability. Do not use this code in a real-world scenario.</p>
 
-            <!-- Vulnerable input field -->
-            <label for="userInput">Enter your name:</label>
-            <input type="text" id="userInput" name="userInput">
-            <button onclick="displayGreeting()">Submit</button>
-
-            <!-- Display area for greeting -->
-            <div id="greeting"></div>
+            <!-- This is where the potential XSS vulnerability exists -->
+            <form>
+                <label for="userInput">Enter something:</label>
+                <input type="text" id="userInput" name="userInput">
+                <button type="button" onclick="displayUserInput()">Submit</button>
+            </form>
+            
+            <div id="output"></div>
+        
+            <script>
+                function displayUserInput() {
+                    var userInput = document.getElementById('userInput').value;
+                    document.getElementById('output').innerHTML = "<p>User input: " + userInput + "</p>";
+                }
+            </script>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Web Vulnerability Demos</p>
+        <p>&copy;2023 - OnlyHacks Cybersecurity Landscape project</p>
     </footer>
-
-    <!-- External JavaScript file -->
-    <script src="XSSscript.js"></script>
 </body>
 </html>

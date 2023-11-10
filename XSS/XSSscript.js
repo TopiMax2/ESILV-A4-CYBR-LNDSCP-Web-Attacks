@@ -1,7 +1,9 @@
-// Script for the XSS Webpage
+// xss-script.js
 
-function displayGreeting() {
-    var userInput = document.getElementById('userInput').value;
-    var greetingContainer = document.getElementById('greeting');
-    greetingContainer.innerHTML = '<p>Hello, ' + userInput + '! Welcome to our vulnerable website!</p>';
+function postComment() {
+    var commentInput = document.getElementById('comment').value;
+    var commentsContainer = document.getElementById('comments');
+
+    // Display the comment without proper sanitization (vulnerable to XSS)
+    commentsContainer.innerHTML += '<p>' + commentInput + '</p>';
 }
