@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/xss.css">
     <title>XSS Demo</title>
-    <link rel="icon" type="image/png" href="img/thunder.png">
+    <link rel="icon" type="image/png" href="../img/thunder.png">
 </head>
 <body>
     <header>
@@ -28,6 +28,7 @@
             <p>This page demonstrates a simple XSS vulnerability. Do not use this code in a real-world scenario.</p>
 
             <!-- This is where the potential XSS vulnerability exists -->
+            <!-- payload is ' <img src="/" onerror = "alert(1);" '-->
             <form>
                 <label for="userInput">Enter something:</label>
                 <input type="text" id="userInput" name="userInput">
