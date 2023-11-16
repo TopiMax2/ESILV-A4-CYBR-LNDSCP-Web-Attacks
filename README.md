@@ -9,17 +9,13 @@ Vulnerabilites showcased :
 - XSS (Cross-Site Scripting) basic js inclusion
 - SQL Injection
 
-## Setup & Requirements
-(might do a Dockerfile later to create the whole site)
+## Setup
 
-### MySQL Server
-Ensure you have a mysql server running locally (defaut port is 3306) with a schema (sqli_data) and a table users (with columns username and password)
+Ensure you have Docker Desktop if you are on windows or that Docker is installed on your Linux machine.
 
-### XAMPP
-Use XAMPP (or setup the Apache server yourself) and install it with PHP preinstalled.
+Then simply go at the root of the directory and run :
 
-Drag the website files into htdocs (usually found in C:/XAMPP/htdocs (unless changed))
-and change httpd conf to point towards the directory of the website
-
-### How to use
-Then connect to localhost:80 to access the page
+```sh
+docker compose build
+docker compose up -d
+```
