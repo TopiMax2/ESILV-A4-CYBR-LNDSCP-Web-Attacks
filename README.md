@@ -19,3 +19,4 @@ Then simply go at the root of the directory and run :
 docker compose build
 docker compose up -d
 ```
+Then simply go to http://localhost:80 !
