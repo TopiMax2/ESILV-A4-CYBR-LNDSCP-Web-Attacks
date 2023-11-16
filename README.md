@@ -10,6 +10,7 @@ Vulnerabilites showcased :
 - SQL Injection
 
 ## Setup & Requirements
+(might do a Dockerfile later to create the whole site)
 
 ### MySQL Server
 Ensure you have a mysql server running locally (defaut port is 3306) with a schema (sqli_data) and a table users (with columns username and password)
