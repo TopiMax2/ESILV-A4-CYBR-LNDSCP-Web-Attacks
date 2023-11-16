@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/xss.css">
+    <title>SQLI Demo</title>
+    <link rel="icon" type="image/png" href="../img/thunder.png">
+</head>
+<body>
+    <header>
+        <h1>Web Vulnerability Demos</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../XSS/XSS.html">XSS</a></li>
+                <li><a href="SQLI.html">SQL Injection</a></li>
+                <li><a href="csrf.html">CSRF</a></li>
+                <li><a href="LFI.html">LFI</a></li>
+                <!-- Add more links for other vulnerabilities -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Login Form</h2>
+
+        <form action="login.php" method="post">
+            Username: <input type="text" name="username"><br>
+            Password: <input type="password" name="password"><br>
+            <input type="submit" value="Login">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy;2023 - OnlyHacks Cybersecurity Landscape project</p>
+    </footer>
+</body>
+</html>
