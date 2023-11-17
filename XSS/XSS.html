@@ -21,28 +21,38 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <section>
             <h2>XSS (Cross-Site Scripting) Demo</h2>
             <p>This page demonstrates a simple XSS vulnerability. Hmmm wonder what happens if I enter: &lt;img src="/" onerror = "alert(1);"</p>
 
-            <!-- This is where the potential XSS vulnerability exists -->
-            <!-- payload is ' <img src="/" onerror = "alert(1);" '-->
-            <form>
-                <label for="userInput">Enter something:</label>
-                <input type="text" id="userInput" name="userInput">
-                <button type="button" onclick="displayUserInput()">Submit</button>
+            <form id="userForm">
+                <label for="user_input">Enter text:</label>
+                <input type="text" id="user_input" name="user_input">
+                <button type="button" onclick="submitForm()">Submit</button>
             </form>
             
             <div id="output"></div>
-        
+            
             <script>
-                function displayUserInput() {
-                    var userInput = document.getElementById('userInput').value;
-                    document.getElementById('output').innerHTML = "<p>User input: " + userInput + "</p>";
-                }
+            function submitForm() {
+                var userInput = document.getElementById('user_input').value;
+            
+                // Use AJAX to send the user input to the PHP file
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        // Update the output div with the response from the PHP file
+                        document.getElementById('output').innerHTML = xhr.responseText;
+                    }
+                };
+                
+                xhr.open('POST', 'getmsg.php', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.send('user_input=' + userInput);
+            }
             </script>
+
         </section>
     </main>
 
