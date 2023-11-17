@@ -8,6 +8,7 @@ Small Website made to showcase different web vulnerabilites and to help explain 
 Vulnerabilites showcased :
 - XSS (Cross-Site Scripting) basic js inclusion
 - SQL Injection
+- LFI (in progress)
 
 ## Setup
 
