@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>LFI Demo</title>
+    <link rel="icon" type="image/png" href="img/thunder.png">
+</head>
+<body>
+    <header>
+        <h1>Web Vulnerability Demos</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../XSS/XSS.html">XSS</a></li>
+                <li><a href="../SQLI/SQLI.html">SQL Injection</a></li>
+                <li><a href="../CSRF/csrf.html">CSRF</a></li>
+                <li><a href="LFI.html">LFI</a></li>
+                <!-- Add more links for other vulnerabilities -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>LFI (Local File Inclusion) Demo</h2>
+            <p>This page simulates a Local File Inclusion vulnerability. Do not use this code in a real-world scenario.</p>
+
+            <!-- Display area for file content -->
+            <div id="fileContent"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Web Vulnerability Demos</p>
+    </footer>
+
+    <!-- External PHP script -->
+    <script src="lfi-script.js"></script>
+</body>
+</html>
