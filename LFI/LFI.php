@@ -16,7 +16,7 @@
                 <li><a href="../XSS/XSS.html">XSS</a></li>
                 <li><a href="../SQLI/SQLI.html">SQL Injection</a></li>
                 <li><a href="../CSRF/csrf.html">CSRF</a></li>
-                <li><a href="LFI.html">LFI</a></li>
+                <li><a href="LFI.php">LFI</a></li>
                 <!-- Add more links for other vulnerabilities -->
             </ul>
         </nav>
@@ -26,9 +26,35 @@
         <section>
             <h2>LFI (Local File Inclusion) Demo</h2>
             <p>This page simulates a Local File Inclusion vulnerability. Do not use this code in a real-world scenario.</p>
+            <form method="get">
+            Filename: <input type="text" name="file"><br>
+            <input type="submit" value="Search">
+            </form>
+            <?php
+            // lfi-script.php
 
-            <!-- Display area for file content -->
-            <div id="fileContent"></div>
+            // Simulating LFI vulnerability (for educational purposes only)
+            // In a real-world scenario, never implement LFI vulnerabilities intentionally
+            // This is for educational purposes and should not be used in a real-world scenario
+
+            $file = $_GET['file'];
+
+            if (isset($file)) {
+                $filePath = "files/{$file}";
+
+                // Check if the file exists before including it
+                if (file_exists($filePath)) {
+                    $fileContent = file_get_contents($filePath);
+
+                    // Display the content within a pre tag
+                    echo $fileContent;
+                } else {
+                    echo 'File not found';
+                }
+            } else {
+                echo 'File will be displayed here.';
+            }
+            ?>
         </section>
     </main>
 
