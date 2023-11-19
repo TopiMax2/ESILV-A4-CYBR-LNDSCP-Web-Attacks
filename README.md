@@ -10,6 +10,7 @@ Vulnerabilites showcased :
 - SQL Injection
 - LFI (in progress)
 - CSRF (planned)
+- IDOR (planned)
 - more ?
 
 ## Setup
