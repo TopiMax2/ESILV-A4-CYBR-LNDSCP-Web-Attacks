@@ -9,8 +9,8 @@ Vulnerabilites showcased :
 - XSS (Cross-Site Scripting) basic js inclusion
 - SQL Injection
 - LFI
+- IDOR
 - CSRF (planned)
-- IDOR (planned)
 - more ?
 
 ## Setup
