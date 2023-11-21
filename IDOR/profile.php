@@ -37,11 +37,12 @@ if ($result && mysqli_num_rows($result) > 0) {
         <h1>IDOR Demo</h1>
         <nav>
             <ul>
-                <li><a href="XSS/xss.html">XSS</a></li>
-                <li><a href="SQLI/SQLI.html">SQL Injection</a></li>
-                <li><a href="CSRF/csrf.html">CSRF</a></li>
-                <li><a href="LFI/LFI.php">LFI</a></li>
-                <li><a href="IDOR/IDOR.html">IDOR</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../XSS/xss.html">XSS</a></li>
+                <li><a href="../SQLI/SQLI.html">SQL Injection</a></li>
+                <li><a href="../CSRF/csrf.html">CSRF</a></li>
+                <li><a href="../LFI/LFI.php">LFI</a></li>
+                <li><a href="IDOR.html">IDOR</a></li>
                 <!-- Add more links for other vulnerabilities -->
             </ul>
         </nav>
@@ -50,6 +51,9 @@ if ($result && mysqli_num_rows($result) > 0) {
     <h2>Welcome, <?php echo $username; ?>!</h2>
     <p>Member ID: <?php echo $memberid; ?></p>
     <p>Info: <?php echo $info; ?></p>
-    <a href="logout.php">Logout</a>
+    <p>Little tip : I wonder what happens if I try to input other peoples memberID in the URL ?</p>
+    <form action="logout.php" method="get">
+        <input type="submit" value="Logout">
+    </form>
 </body>
 </html>

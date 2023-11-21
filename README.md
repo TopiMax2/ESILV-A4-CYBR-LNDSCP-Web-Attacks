@@ -24,3 +24,11 @@ docker compose build
 docker compose up -d
 ```
 Then simply go to http://localhost:80 !
+
+## :camera: Screenshots
+
+Homepage of the website :
+![Homepage of our website](img/index.jpg)
+
+SQLI Demo :
+![SQLI Demo Login Page](img/sqli.png)
