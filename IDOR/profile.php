@@ -1,3 +1,28 @@
+<?php
+session_start();
+require_once('db.php');
+
+if (!isset($_SESSION['memberid'])) {
+    header("Location: ../index.php");
+    exit();
+}
+
+$memberid = $_GET['memberid'];
+
+// Retrieve member information based on the memberid
+$query = "SELECT * FROM members WHERE id='$memberid'";
+$result = mysqli_query($conn, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $username = $row['username'];
+    $info = $row['info'];
+} else {
+    echo "Member not found.";
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,23 +47,9 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Member Secret information : Login</h2>
-            <form action="login.php" method="get">
-                <label for="username">Username:</label>
-                <input type="text" name="username" required><br>
-        
-                <label for="password">Password:</label>
-                <input type="password" name="password" required><br>
-        
-                <input type="submit" value="Login">
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy;2023 - OnlyHacks Cybersecurity Landscape project</p>
-    </footer>
+    <h2>Welcome, <?php echo $username; ?>!</h2>
+    <p>Member ID: <?php echo $memberid; ?></p>
+    <p>Info: <?php echo $info; ?></p>
+    <a href="logout.php">Logout</a>
 </body>
 </html>
