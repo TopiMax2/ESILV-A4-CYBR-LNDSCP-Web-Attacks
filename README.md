@@ -1,7 +1,7 @@
 # Web Attacks Demo Site
 ESILV 2023-2024 - OCC2 - OnlyHacks Team
 
-## Introduction
+## :information_source: Introduction
 
 Small Website made to showcase different web vulnerabilites and to help explain how to spot them and prevent these vulnerabilities on real web pages !
 
@@ -13,7 +13,7 @@ Vulnerabilites showcased :
 - CSRF (planned)
 - more ?
 
-## Setup
+## :wrench: Setup
 
 Ensure you have Docker Desktop if you are on windows or that Docker is installed on your Linux machine.
 
