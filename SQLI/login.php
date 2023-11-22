@@ -1,10 +1,6 @@
 <?php
-// Simulated authentication logic (vulnerable to SQL injection)
-$servername = "db";
-$username = "user";
-$password = "password";
-$dbname = "school_project";
 
+// Simulated authentication logic (vulnerable to SQL injection)
 define('DB_HOST', 'db');
 define('DB_NAME', 'school_project');
 define('DB_USER', 'user');
