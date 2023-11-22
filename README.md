@@ -10,7 +10,7 @@ Vulnerabilites showcased :
 - SQL Injection
 - LFI
 - IDOR
-- CSRF (planned)
+- CSRF (in progress)
 - more ?
 
 ## :wrench: Setup
