@@ -38,11 +38,11 @@ if ($result && mysqli_num_rows($result) > 0) {
         <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../XSS/xss.html">XSS</a></li>
                 <li><a href="../SQLI/SQLI.html">SQL Injection</a></li>
-                <li><a href="../CSRF/csrf.html">CSRF</a></li>
+                <li><a href="../XSS/XSS.html">XSS</a></li>
+                <li><a href="../IDOR/IDOR.html">IDOR</a></li>
+                <li><a href="../CSRF/CSRF.html">CSRF</a></li>
                 <li><a href="../LFI/LFI.php">LFI</a></li>
-                <li><a href="IDOR.html">IDOR</a></li>
                 <!-- Add more links for other vulnerabilities -->
             </ul>
         </nav>
