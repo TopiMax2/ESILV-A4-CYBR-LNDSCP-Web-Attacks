@@ -39,7 +39,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/csrf.css">
     <title>Web Vulnerability Demos</title>
     <link rel="icon" type="image/png" href="img/thunder.png">
 </head>
@@ -72,8 +72,30 @@ $conn->close();
 
         <input type="submit" value="Transfer">
     </form>
-    
-    <br>
+    <p>
+        A malicious user could use the following link : "localhost/CSRF/transfer.php?amount=10&recipient=evil_user"
+        and if the targeted user clicks on it while logged in to its bank it will withdraw 10$ from its bank account towards our "evil user" account.
+        The link could be hidden in a mail or text like this :
+    </p>
+    <form id="maliciousForm" action="transfer.php" method="get">
+    <!-- Hidden input fields for amount and recipient -->
+    <input type="hidden" name="amount" id="maliciousAmount" value="10">
+    <input type="hidden" name="recipient" id="maliciousRecipient" value="evil_user">
+
+    <input type="button" id="maliciousButton" value="Submit Malicious Form">
+    </form>
+
+    <script>
+        document.getElementById('maliciousButton').addEventListener('click', function() {
+            // Set the values for amount and recipient
+            document.getElementById('maliciousAmount').value = '10';
+            document.getElementById('maliciousRecipient').value = 'evil_user';
+
+            // Submit the form
+            document.getElementById('maliciousForm').submit();
+        });
+    </script>
+
     <form action="logout.php" method="get">
         <input type="submit" value="Logout">
     </form>

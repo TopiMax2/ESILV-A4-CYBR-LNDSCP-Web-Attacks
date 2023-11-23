@@ -48,11 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $new_recipient_balance = $recipient_user["balance"] + $amount;
 
         // Update sender's balance
-        $sql_update_sender = "UPDATE users SET balance = '$new_sender_balance' WHERE id = '$sender_id'";
+        $sql_update_sender = "UPDATE bank_users SET balance = '$new_sender_balance' WHERE id = '$sender_id'";
         $conn->query($sql_update_sender);
 
         // Update recipient's balance
-        $sql_update_recipient = "UPDATE users SET balance = '$new_recipient_balance' WHERE id = '$recipient_id'";
+        $sql_update_recipient = "UPDATE bank_users SET balance = '$new_recipient_balance' WHERE id = '$recipient_id'";
         $conn->query($sql_update_recipient);
 
         // Redirect back to the account page
